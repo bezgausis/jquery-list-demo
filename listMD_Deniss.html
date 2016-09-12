@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery Mājas darbs</title>
+ 
+  <script src="jquery-1.11.3.min.js"></script>
+  <script src="jquery-ui.js"></script>
+  <link rel="stylesheet" href="jquery-ui.css">
+
+  <style>
+ul { list-style: none;}
+ul li {padding: 15px; margin-bottom: 10px;}
+  </style>
+  <script>
+jQuery(function() {
+$( "li:nth-child(even)" ).addClass( "ui-state-default" );
+$( "li:nth-child(odd)" ).addClass( "ui-state-highlight" );
+$(".stack").draggable();
+
+$('#trash').droppable({
+        drop: function(event, ui) {
+            
+            ui.draggable.remove();
+            alert("Elements izdzēsts!");
+        }
+    });
+    
+      
+	
+});
+
+
+
+  </script>
+</head>
+<body>
+<div id="trash"><img src="bin.jpg"></div>
+<ul>
+ <li class="stack">Maize</li>
+ <li class="stack">Piens</li>
+ <li class="stack">Kafija</li>
+ <li class="stack">Alus</li>
+ <li class="stack">Siers</li>
+</ul>
+ 
+ 
+</body>
+</html>
